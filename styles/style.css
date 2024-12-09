@@ -1,0 +1,756 @@
+/**************/
+/* CSS REMEDY */
+/**************/
+*, *::after, *::before {
+  box-sizing:border-box;  
+}
+
+
+
+
+
+
+/*********************/
+/* CUSTOM PROPERTIES */
+/*********************/
+:root {
+	/* startje */
+    --light-text: #fff; 
+	--dark-text:#111;
+	--color-background:#fff;
+    --dark-color-background:#919191;
+    --symb-color: #d9dce0;
+	font-family: Arial, Helvetica, sans-serif;
+	letter-spacing: 0.09em;
+	font-weight: 300;
+    background-color: var(--color-background);
+}
+
+
+
+
+
+header, main, footer {
+    width: 100%; /* Default: neem de volledige breedte in */
+    max-width: 105rem; /* Maximale breedte */
+    margin: 0 auto; /* Centreer als max-width bereikt is */
+    box-sizing: border-box; /* Houd padding mee in de breedte */
+    justify-content: center;
+  }
+/****************/
+/* JOUW STYLING */
+/****************/
+
+h2 {
+	font-size: 1.2em;
+	font-weight: 550;
+}
+
+/* https://www.a11yproject.com/posts/how-to-hide-content/ gebruilkt om de H1 te verstoppen */
+.visually-hidden {  
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+a {
+    cursor: pointer;
+}
+
+main {
+    display: main;
+    gap: 0.5rem;
+}
+
+section {
+    margin-bottom: 0.5rem;
+}
+
+/* Header NAV */
+
+.logo {
+	width: 8rem;
+    margin-right: auto;
+}
+  
+.logo svg {
+	width: 100%; 
+	height: auto; 
+    color: var(--symb-dark);
+}
+
+
+.ZoekButton {
+    display: flex;
+    width: 2rem;
+    background: none;
+    border: none;
+    margin-left: 3rem;
+}
+
+.ZoekSymb {
+    width: 100%;
+    height: auto;
+}
+
+.HartButton {
+    display: flex;
+    width: 2rem;
+    background: none;
+    border: none;
+}
+
+.HartSymb {
+    width: 100%;
+    height: auto;
+}
+
+.TasButton {
+    display: flex;
+    width: 2rem;
+    background: none;
+    border: none;
+}
+
+.TasSymb {
+    width: 100%;
+    height: auto;
+}
+
+.MenuButton {
+    display: flex;
+    width: 2rem;
+    background: none;
+    border: none;
+    margin: 0.3rem 0 0 0;
+}
+
+.MenuSymb {
+    width: 100%;
+    height: auto;
+}
+
+.CloseButton {
+    display: flex;
+    width: 1.5rem;
+    background: none;
+    border: none;
+    margin: 0.3rem 0 0 0;
+    margin-left: auto;
+}
+
+.CloseSymb {
+    width: 100%;
+    height: auto;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    padding-left: 0rem;
+    justify-content: center;
+    gap: 0.8rem;
+    margin-left: auto;
+}
+
+header {
+    position: fixed;
+    z-index: 999;
+    background-color: var(--color-background);
+    top: 0;
+    width: 100%;
+    left: 0;
+    max-width: 105rem;
+    padding: 0 1rem 0 1rem;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: space-between;
+    margin-left:  auto;
+    border-bottom: 1px solid var(--symb-color);
+}
+
+.hamburger-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--color-background);
+    z-index: 2000;
+    transform: translateY(-100%);
+    transition: transform 0.05s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 1rem 1.5rem 1rem;
+  }
+
+.hamburger-overlay.open {
+  transform: translateY(0);
+}
+
+.hamburger-menu__links {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0 0 0;
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  color: var(--dark-text);
+}
+
+.hamburger-menu__links li {
+  margin: 1rem 0;
+  color: var(--dark-text);
+}
+
+.hamburger-menu__links a {
+  text-decoration: none;
+  color: var(--dark-text);
+  font-size: 1em;
+  font-weight: 600;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.hamburger-menu__links a::after {
+    content: '\25B6';
+    font-size: 1.2rem;
+    color: var(--symb-color);
+}
+
+.hamburger-menu__links button {
+    background: none;
+    border: none;
+    text-decoration: none;
+    color: var(--dark-text);
+    font-size: 1em;
+    font-weight: 600;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+}
+
+.hamburger-menu__links button::after {
+    content: '\25B6';
+    font-size: 1.2rem;
+    color: var(--symb-color);
+}
+
+
+/* Poging submenu */
+
+/* .gifts-submenu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    z-index: 3000;
+    transform: translateY(-100%);
+    transition: transform 0.05s ease; 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 1rem 1.5rem 1rem;
+}
+
+.gifts-submenu__links {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0 0 0;
+    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.gifts-submenu img {
+    width: 100% 
+ } */
+
+
+
+
+/* Holiday Collection Section */
+
+.HolidayCollection {
+    position: relative;
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    height: 95vh;
+    overflow: hidden;
+    text-align: center;
+	padding-top: 30rem;
+    grid-column: span 2;
+}
+
+.HolidayCollection video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 95vh;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.HolidayCollection h2,
+.HolidayCollection p {
+    color: #fff;
+    position: relative;
+    z-index: 1;
+    margin: 1rem 0; 
+}
+
+.HolidayCollection p {
+	font-size: 0.8em;
+	margin: 0 3rem 0 3rem;
+}
+
+.HolidayCollection ul {
+    display: flex; 
+    flex-wrap: wrap;
+	gap: 1rem;
+    padding: 0;
+    margin: 3em 0; 
+    list-style: none; 
+    z-index: 1;
+}
+
+.HolidayCollection ul li a {
+    color: #fff;
+    text-decoration: none;
+	text-transform: uppercase;
+    padding: 0.5rem 0.1rem;
+    border-bottom: 1px solid #fff;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.HolidayCollection ul li a:active {
+    background-color: #fff;
+    color: #111;
+}
+
+.HolidayCollection ul li a:hover {
+    background-color: #fff;
+    color: #111;
+}
+
+
+
+
+/* Gifts for Her Section */
+
+.GiftsHer {
+    position: relative; 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start; 
+    height: 60vh; 
+    padding: 1rem 0 0 1rem; 
+}
+
+.GiftsHer img {
+	position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60vh;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.GiftsHer h2 {
+	color: #fff;
+}
+
+.GiftsHer a {
+	color: #fff;
+    text-decoration: none;
+	text-transform: uppercase;
+    padding: 0.5rem 0.1rem;
+    border-bottom: 1px solid #fff;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.GiftsHer a:active {
+    background-color: #fff;
+    color: #111;
+}
+
+main a:hover {
+    background-color: #fff;
+    color: #111;
+    transition: 0.3s;
+}
+
+/* Gifts for Him Section */
+
+.GiftsHim {
+    position: relative; 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start; 
+    height: 60vh; 
+    padding: 1rem 0 0 1rem; 
+}
+
+.GiftsHim img {
+	position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60vh;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.GiftsHim h2 {
+	color: #fff;
+}
+
+.GiftsHim a {
+	color: #fff;
+    text-decoration: none;
+	text-transform: uppercase;
+    padding: 0.5rem 0.1rem;
+    border-bottom: 1px solid #fff;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.GiftsHim a:active {
+    background-color: #fff;
+    color: #111;
+}
+
+
+/* Women's Bags Section */
+
+.WomensBags {
+    position: relative; 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start; 
+    height: 60vh; 
+    padding: 1rem 0 0 1rem; 
+}
+
+.WomensBags img {
+	position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60vh;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.WomensBags h2 {
+	color: #111;
+}
+
+.WomensBags a {
+	color: #111;
+    text-decoration: none;
+	text-transform: uppercase;
+    padding: 0.5rem 0.1rem;
+    border-bottom: 1px solid #111;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.WomensBags a:active {
+    background-color: #111;
+    color: #fff;
+}
+
+.WomensBags a:hover {
+    background-color: #111;
+    color: #fff;
+}
+
+/* Men's Bags Section */
+
+.MensBag {
+    position: relative; 
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start; 
+    height: 60vh; 
+    padding: 1rem 0 0 1rem; 
+}
+
+.MensBag img {
+	position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60vh;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.MensBag h2 {
+	color: #111;
+}
+
+.MensBag a {
+	color: #111;
+    text-decoration: none;
+	text-transform: uppercase;
+    padding: 0.5rem 0.1rem;
+    border-bottom: 1px solid #111;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.MensBag a:active {
+    background-color: #111;
+    color: #fff;
+}
+
+.MensBag a:hover {
+    background-color: #111;
+    color: #fff;
+}
+
+/* Women's Shoes Section */
+
+.WomensShoes {
+    position: relative; 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start; 
+    height: 60vh; 
+    padding: 1rem 0 0 1rem; 
+}
+
+.WomensShoes img {
+	position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60vh;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.WomensShoes h2 {
+	color: #fff;
+}
+
+.WomensShoes a {
+	color: #fff;
+    text-decoration: none;
+	text-transform: uppercase;
+    padding: 0.5rem 0.1rem;
+    border-bottom: 1px solid #fff;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.WomensShoes a:active {
+    background-color: #fff;
+    color: #111;
+}
+
+
+/* Men's Shoes Section */
+
+.MensShoes {
+    position: relative; 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start; 
+    height: 60vh; 
+    padding: 1rem 0 0 1rem; 
+}
+
+.MensShoes img {
+	position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60vh;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.MensShoes h2 {
+	color: #fff;
+}
+
+.MensShoes a {
+	color: #fff;
+    text-decoration: none;
+	text-transform: uppercase;
+    padding: 0.5rem 0.1rem;
+    border-bottom: 1px solid #fff;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.MensShoes a:active {
+    background-color: #fff;
+    color: #111;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Footer */
+
+footer {
+    margin: 0 0.5rem 0 0.5rem;
+}
+
+details summary {
+  list-style: none; 
+  position: relative; 
+  cursor: pointer; 
+  padding: 2rem 0 2rem 0;
+  font-size: 0.8em;
+  font-weight: 600;
+  color: var(--dark-text);
+}
+
+details summary::marker {
+  content: ''; 
+}
+
+details summary::after {
+  content: '\25BC'; 
+  position: absolute;
+  right: 0; 
+  transform: rotate(0deg);
+  transition: transform 0.3s ease;
+}
+
+details[open] summary::after {
+    transform: rotate(180deg);
+}
+
+details {
+    position: relative;
+}
+
+details::before, 
+details::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100vw;
+    height: 1px;
+    background-color: var(--symb-color);
+    transform: translateX(-2vh);
+}
+
+details ul{
+    list-style: none;
+    padding: 0;
+}
+
+details ul li {
+    padding-bottom: 2rem;
+    font-size: 0.8em;
+    font-weight: 500;
+    color: var(--dark-text);  
+}
+
+
+input[type="email"] {
+    border: none;
+    border-bottom: 1px solid var(--dark-text); 
+    padding-bottom: 0.5rem; 
+    font-size: 1rem; 
+    width: 100%; 
+    position: relative;
+    margin-bottom: 1em;
+}
+
+footer h3 {
+    font-size: 0.8em;
+    font-weight: 600;
+    margin: 6em 0 3em 0;
+    color: var(--dark-text);
+}
+
+footer p {
+    font-size: 0.6em;
+    color: var(--dark-text);
+}
+
+footer p a {
+    color: var(--dark-text);
+    font-weight: 600
+}
+
+
+
+/* MEDIA QUE */
+
+@media (min-width: 768px) {
+    main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .HolidayCollection {
+        grid-column: span 2;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .HolidayCollection ul {
+        flex-wrap: nowrap; 
+        justify-content: space-evenly; 
+    }
+
+    .HolidayCollection ul li a {
+        font-size: 0.9rem;
+        text-align: center;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-background:#919191;
+        --dark-color-background:#fff;
+        --light-text: #111; 
+        --dark-text:#fff;
+    }
+}
+
+
+
+@media (min-width: 1680px) {
+    header, main, footer {
+      width: 105rem; 
+    }
+  }
